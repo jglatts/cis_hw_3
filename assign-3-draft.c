@@ -1,5 +1,4 @@
 /*
-
 Assignment 3
 DUE DATE: 10/23
 -------------TO DO-------------
@@ -7,8 +6,8 @@ DUE DATE: 10/23
       -occurs in the do-while loop
    -evaluate and print hints
    -stop game if theres a win
-
 */
+
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -59,7 +58,7 @@ void play_game()
             printf("\nEnter A 3 Digit Number Please\n");
             scanf("%d", &user_guess); // put this at the beginning and add an if statement to stop before playing a new game
 
-            //printf("\nGenerated Number: %d%d%d\n", digit_one, digit_two, digit_three);            
+            printf("\nGenerated Number: %d%d%d\n", digit_one, digit_two, digit_three);            
             is_guess_correct(digit_one, digit_two, digit_three, user_guess);
 
         }
@@ -138,6 +137,11 @@ void print_hint(int digit_one_check, int digit_two_check, int digit_three_check,
         printf("\n\nGuess = %d, Fermi Fermi\n\n", user_input_check);
         /* start more evaluation here */
     }
+    if (guess_digit_one == digit_one_check && guess_digit_two == digit_three_check && guess_digit_three == digit_two_check)
+    {
+        printf("\n\nGuess = %d, Pico Pico\n\n", user_input_check);
+        /* start more evaluation here */
+    }    
     else if (guess_digit_one == digit_one_check || guess_digit_two == digit_two_check || guess_digit_three == digit_three_check)
     {
         printf("\n\nGuess = %d, Fermi\n\n", user_input_check);
