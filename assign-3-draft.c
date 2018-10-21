@@ -127,6 +127,7 @@ void print_hint(int digit_one_check, int digit_two_check, int digit_three_check,
     guess_digit_three = remainder;
 
     // start of the user vs. comp check. Another check maybe needed before this for a winning guess
+    // gets a bit choppy here, find the most efficient sort 
     if (guess_digit_one == digit_one_check && guess_digit_two == digit_two_check || guess_digit_one == digit_one_check && guess_digit_three == digit_three_check || guess_digit_two == digit_two_check && guess_digit_three == digit_three_check)
     {
         printf("\n\nGuess = %d, Fermi Fermi\n\n", user_input_check);
@@ -137,7 +138,11 @@ void print_hint(int digit_one_check, int digit_two_check, int digit_three_check,
         printf("\n\nGuess = %d, Fermi Pico Pico\n\n", user_input_check);
         /* start more evaluation here */
     }
-    // add a FERMI-PICO here
+    else if (guess_digit_one == digit_one_check && guess_digit_two == digit_three_check && guess_digit_three != digit_three_check || guess_digit_one == digit_one_check && guess_digit_three == digit_two_check && guess_digit_two != digit_two_check || guess_digit_two == digit_one_check && guess_digit_three == digit_two_check && guess_digit_one != digit_one_check)
+    {
+        printf("\n\nGuess = %d, Fermi Pico\n\n", user_input_check);
+        /* start more evaluation here */
+    }
     else if (guess_digit_one == digit_two_check && guess_digit_two == digit_one_check && guess_digit_three != digit_three_check || guess_digit_three == digit_two_check && guess_digit_two == digit_three_check && guess_digit_one != digit_one_check|| guess_digit_one == digit_three_check && guess_digit_three == digit_one_check && guess_digit_two != digit_two_check)
     {
         printf("\n\nGuess = %d, Pico Pico\n\n", user_input_check);
