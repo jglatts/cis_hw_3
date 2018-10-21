@@ -119,6 +119,7 @@ int is_guess_correct( int digit_one_generated_check, int digit_two_generated_che
 void print_hint(int digit_one_check, int digit_two_check, int digit_three_check, int user_input_check)
 {
     int guess_digit_one, guess_digit_two, guess_digit_three, remainder;
+
     guess_digit_one = user_input_check / 100;
     remainder = user_input_check % 100;
     guess_digit_two = remainder / 10;
@@ -126,33 +127,28 @@ void print_hint(int digit_one_check, int digit_two_check, int digit_three_check,
     guess_digit_three = remainder;
 
     // start of the user vs. comp check. Another check maybe needed before this for a winning guess
-    // go back and comment the steps
-    if (guess_digit_one == digit_one_check && guess_digit_two == digit_three_check && guess_digit_three == digit_two_check || guess_digit_one == digit_three_check && guess_digit_two == digit_two_check && guess_digit_three == digit_one_check  || guess_digit_one == digit_two_check && guess_digit_two == digit_one_check && guess_digit_three == digit_three_check)
-    {
-        printf("\n\nGuess = %d, Fermi Pico Pico\n\n", user_input_check);
-        /* start more evaluation here */       
-    }
-    else if (guess_digit_one == digit_one_check && guess_digit_two == digit_two_check || guess_digit_one == digit_one_check && guess_digit_three == digit_three_check || guess_digit_two == digit_two_check && guess_digit_three == digit_three_check)
+    if (guess_digit_one == digit_one_check && guess_digit_two == digit_two_check || guess_digit_one == digit_one_check && guess_digit_three == digit_three_check || guess_digit_two == digit_two_check && guess_digit_three == digit_three_check)
     {
         printf("\n\nGuess = %d, Fermi Fermi\n\n", user_input_check);
         /* start more evaluation here */
     }
-    if (guess_digit_one == digit_one_check && guess_digit_two == digit_three_check && guess_digit_three == digit_two_check)
+    else if (guess_digit_one == digit_one_check && guess_digit_two == digit_three_check && guess_digit_three == digit_two_check || guess_digit_one == digit_two_check && guess_digit_three == digit_three_check || guess_digit_one == digit_three_check && guess_digit_two == digit_two_check)
+    {
+        printf("\n\nGuess = %d, Fermi Pico Pico\n\n", user_input_check);
+        /* start more evaluation here */
+    }
+    // add a FERMI-PICO here
+    else if (guess_digit_one == digit_two_check && guess_digit_two == digit_one_check && guess_digit_three != digit_three_check || guess_digit_three == digit_two_check && guess_digit_two == digit_three_check && guess_digit_one != digit_one_check|| guess_digit_one == digit_three_check && guess_digit_three == digit_one_check && guess_digit_two != digit_two_check)
     {
         printf("\n\nGuess = %d, Pico Pico\n\n", user_input_check);
         /* start more evaluation here */
-    }    
+    }
     else if (guess_digit_one == digit_one_check || guess_digit_two == digit_two_check || guess_digit_three == digit_three_check)
     {
         printf("\n\nGuess = %d, Fermi\n\n", user_input_check);
         /* start more evaluation here */
     }
     else if (guess_digit_one == digit_two_check || guess_digit_two == digit_three_check || guess_digit_three == digit_one_check)
-    {
-        printf("\n\nGuess = %d, Pico\n\n", user_input_check);
-        /* start more evaluation here */
-    }
-    else if (guess_digit_one == digit_three_check || guess_digit_two == digit_one_check || guess_digit_three == digit_two_check)
     {
         printf("\n\nGuess = %d, Pico\n\n", user_input_check);
         /* start more evaluation here */
