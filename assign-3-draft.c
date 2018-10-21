@@ -1,4 +1,5 @@
 /*
+
 Assignment 3
 DUE DATE: 10/23
 -------------TO DO-------------
@@ -6,8 +7,8 @@ DUE DATE: 10/23
       -occurs in the do-while loop
    -evaluate and print hints
    -stop game if theres a win
-*/
 
+*/
 
 #include <stdio.h>
 #include <stdlib.h>
