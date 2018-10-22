@@ -1,11 +1,7 @@
 /*
 Assignment 3
 DUE DATE: 10/23
--------------TO DO-------------
-   -user quit input
-      -occurs in the do-while loop
-   -evaluate and print hints
-   -stop game if theres a win
+FERMI PICO unit test
 */
 
 
@@ -132,11 +128,12 @@ void print_hint(int d_one, int d_two, int d_three, int user_input_check)
     Fermi Pico, unit testing
     Test Points:
         generated number = 345 -> ABC
-    542 -> dig1 = 
-
+    542 -> dig1 = C && dig2 = B && dig3 != A
+        -> dig1 = A && dig2 = C && dig3 != B
+        -> dig1 = B && dig2 = A && dig3 != C
 
     */
-    else if ()
+    if ( guess_one == d_three && guess_two == d_two && guess_three != d_one || guess_one == d_one && guess_two == d_three && guess_three != d_two || guess_one == d_two && guess_two == d_one && guess_three != d_three)
     {
         printf("\n\nGuess = %d, Fermi Pico\n\n", user_input_check);
         /* start more evaluation here */
