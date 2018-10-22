@@ -130,6 +130,10 @@ void print_hint(int d_one, int d_two, int d_three, int user_input_check)
     /* 
 
     Fermi Pico, unit testing
+    Test Points:
+        generated number = 345 -> ABC
+    542 -> dig1 = 
+
 
     */
     else if ()
