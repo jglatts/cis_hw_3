@@ -4,7 +4,6 @@ DUE DATE: 10/23
 FERMI PICO unit test
 */
 
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -32,8 +31,6 @@ void play_game()
 {
     int play_again_check;
     int user_guess;
-    int remainder;
-    int guess_digit_one, guess_digit_two, guess_digit_three, full_generated_number;
     int digit_one, digit_two, digit_three; // location for the generated number
     int *digit_one_ptr = NULL, *digit_two_ptr = NULL, *digit_three_ptr = NULL;  // pointers to the generated digits
 
