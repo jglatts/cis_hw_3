@@ -130,7 +130,12 @@ void print_hint(int d_one, int d_two, int d_three, int user_input_check)
         -> dig1 = B && dig2 = A && dig3 != C
 
     */
-    if ( guess_one == d_three && guess_two == d_two && guess_three != d_one || guess_one == d_one && guess_two == d_three && guess_three != d_two || guess_one == d_two && guess_two == d_one && guess_three != d_three)
+    if (guess_one == d_one && guess_two == d_three && guess_three != d_two || 
+        guess_one == d_one && guess_three == d_two && guess_two != d_three || 
+        guess_two == d_two && guess_three == d_one && guess_one != d_three || 
+        guess_two == d_two && guess_one == d_three && guess_three != d_one || 
+        guess_three == d_three && guess_two == d_one && guess_one != d_two || 
+        guess_three == d_three && guess_one == d_two && guess_two != d_one)
     {
         printf("\n\nGuess = %d, Fermi Pico\n\n", user_input_check);
         /* start more evaluation here */
