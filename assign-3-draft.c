@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <time.h>
 
-
 // KEEP TRACK OF HOW MANY GUESSES
 // WHEN USER QUITS, DISPLAY IF THEY WON OR LOST
 
@@ -16,7 +15,7 @@ void print_hint(int, int, int, int);
 int main(int argc, char const *argv[])
 {
 	int play_again_check;
-
+	
 	do
 	{
 		printf("\nDo You Want To Play Fermi Pico Bagel?\n");
@@ -28,11 +27,11 @@ int main(int argc, char const *argv[])
 
     printf("OK Thanks for playing!\n");
 	
-
     // add the final results
 
     return 0;
 }
+
 
 // start of fermi, pico, bagel game. This function will call the other functions of the game
 // go back and refractor before due date
@@ -91,6 +90,7 @@ void generate_secret_number(int *one_generate, int *two_generate, int *three_gen
 
 }
 
+
 int is_guess_correct( int digit_one_generated_check, int digit_two_generated_check, int digit_three_generated_check, int user_input)
 {
     int guess_digit_one, guess_digit_two, guess_digit_three, remainder;
@@ -117,7 +117,12 @@ int is_guess_correct( int digit_one_generated_check, int digit_two_generated_che
     return 0; // return a value if true or false -- come back to this 
 }
 
-// REWORK SOME OF THE SORT ALGORTIHIMS, NOT QUITE THERE 
+
+/*
+
+	REWORK SOME OF THE SORT ALGORTIHIMS, NOT QUITE THERE
+	
+*/
 void print_hint(int digit_one_check, int digit_two_check, int digit_three_check, int user_input_check)
 {
     int guess_digit_one, guess_digit_two, guess_digit_three, remainder;
