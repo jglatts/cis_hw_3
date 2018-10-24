@@ -51,11 +51,11 @@ void play_game()
     generate_secret_number(digit_one_ptr, digit_two_ptr, digit_three_ptr);
 
     // begin the game
-    printf("\nEnter A 3 Digit Number To Play\n");
+    printf("Enter A 3 Digit Number To Play\n");
     printf("Enter 0 To Quit At Anytime\n");
     do
     {
-    	printf("Enter Guess -> ");
+    	printf("\nEnter Guess -> ");
         scanf("%d", &user_guess); // put this at the beginning and add an if statement to stop before playing a new game
         
         if (user_guess != 0)
