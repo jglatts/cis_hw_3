@@ -55,7 +55,7 @@ void play_game()
     	printf("\n\nEnter A 3 Digit Number To Play\n");
     	printf("Enter 0 To Quit At Anytime\n");
     	printf("Enter Guess\n");
-        scanf("%d", &user_guess); // put this at the beginning and add an if statement to stop before playing a new game
+       scanf("%d", &user_guess); // put this at the beginning and add an if statement to stop before playing a new game
         
         if (user_guess != 0)
         {
