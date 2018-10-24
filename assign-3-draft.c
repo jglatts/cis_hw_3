@@ -19,11 +19,11 @@ int main(int argc, char const *argv[])
 
 	do
 	{
-		printf("\nDo You Want To Play Fermi Pico Bagel?\n");
+		printf("\nPlay Fermi Pico Bagel!\n");
 		play_game(); //call play_game to start the game
 	} while (play_again_check == 1);	
 
-    printf("\nOK Thanks for playing!\n");
+    printf("\n\nThanks for playing!\n");
 	printf("Play Again?\n");
 	printf("Enter 1 For Yes\n");
 	scanf("%d", &play_again_check);
@@ -32,6 +32,7 @@ int main(int argc, char const *argv[])
 
     return 0;
 }
+
 
 // start of fermi, pico, bagel game. This function will call the other functions of the game
 // go back and refractor before due date
@@ -50,12 +51,12 @@ void play_game()
     generate_secret_number(digit_one_ptr, digit_two_ptr, digit_three_ptr);
 
     // begin the game
+    printf("\nEnter A 3 Digit Number To Play\n");
+    printf("Enter 0 To Quit At Anytime\n");
     do
     {
-    	printf("\n\nEnter A 3 Digit Number To Play\n");
-    	printf("Enter 0 To Quit At Anytime\n");
-    	printf("Enter Guess\n");
-       scanf("%d", &user_guess); // put this at the beginning and add an if statement to stop before playing a new game
+    	printf("Enter Guess -> ");
+        scanf("%d", &user_guess); // put this at the beginning and add an if statement to stop before playing a new game
         
         if (user_guess != 0)
         {
@@ -69,7 +70,7 @@ void play_game()
         }
         
     } while (user_guess != 0 && correct_check != 1); // change this to stop if "is_guess_correct()" returns the right value
-    printf("\n\nNumber of Guesses: %d\n", number_of_guesses );
+    printf("Number of Guesses: %d\n", number_of_guesses );
 }
 
 
@@ -90,6 +91,7 @@ void generate_secret_number(int *one_generate, int *two_generate, int *three_gen
     *three_generate = digit_three_generated;
 
 }
+
 
 int is_guess_correct( int digit_one_generated_check, int digit_two_generated_check, int digit_three_generated_check, int user_input)
 {
@@ -116,6 +118,7 @@ int is_guess_correct( int digit_one_generated_check, int digit_two_generated_che
 
     return 0; // return a value if true or false -- come back to this 
 }
+
 
 // REWORK SOME OF THE SORT ALGORTIHIMS, NOT QUITE THERE 
 void print_hint(int digit_one_check, int digit_two_check, int digit_three_check, int user_input_check)
@@ -169,6 +172,5 @@ void print_hint(int digit_one_check, int digit_two_check, int digit_three_check,
     {
         printf("Guess = %d, Bagels\n\n", user_input_check);
     }
-
 
 }
